@@ -15,4 +15,7 @@
 //    return view('welcome');
 //});
 
-Route::get('/admin/panel' , 'Admin\PanelController@index');
+Route::namespace('Admin')->prefix('admin')->group(function(){
+    $this->get('/panel','PanelController@index');
+    $this->resource('articles','ArticleController');
+});
