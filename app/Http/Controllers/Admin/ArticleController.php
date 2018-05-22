@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Article;
+use App\Http\Requests\ArticleRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -35,9 +36,9 @@ class ArticleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ArticleRequest $request)
     {
-        //
+        return $request->all();
     }
 
     /**
